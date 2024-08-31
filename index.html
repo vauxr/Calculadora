@@ -72,9 +72,9 @@
             <button class="button operator" onclick="setOperator('+')">+</button>
 
             <button class="button operator" onclick="convertToFahrenheit()">T</button>
-            <button class="button operator" ></button>
-            <button class="button operator" ></button>
-            <button class="button operator" ></button>
+            <button class="button operator" onclick="convertirPeso()">P</button>
+            <button class="button operator" ></button> 
+            <button class="button operator" ></button> 
         </div>
     </div>
 
@@ -125,7 +125,12 @@
             currentInput = result.toString();
             updateDisplay();
         }
-
+        function convertirPeso() {
+            if (currentInput === '') return;
+            let result = parseFloat(currentInput) / 1000;
+            currentInput = result.toString();
+            updateDisplay();
+        }
         function clearDisplay() {
             currentInput = '';
             operator = '';
